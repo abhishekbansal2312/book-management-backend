@@ -6,7 +6,7 @@ const Book = require("../models/book");
 router.post("/", (req, res) => {
   const { title, price, author, genre } = req.body;
 
-  if (!title || !genre || !price || !author) {
+  if (!title || !price || !author) {
     return res.status(400).json({ error: "Please provide all fields" });
   }
   const book = new Book({
