@@ -3,13 +3,15 @@ const express = require("express");
 const mongoose = require("./mongoose");
 
 const bodyParser = require("body-parser");
-const bookRoutes = require("./routes/bookRoutes");
+const userRoutes = require("./routes/userRoutes");
+const clubRoutes = require("./routes/clubRoutes");
 
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/books", bookRoutes);
+app.use("/user", userRoutes);
+app.use("/club", clubRoutes);
 
 app.get("/", (req, res) => {
   res.send("Library Management API is running");
